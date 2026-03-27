@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cqxdryoflxxq8"]
+
+[ext_resource type="PackedScene" uid="uid://d4nmhl5lu0467" path="res://pelihahmo.tscn" id="2_723fy"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_723fy"]
+distance = -94.0
+
+[node name="Peli" type="Node2D" unique_id=1186789727]
+
+[node name="pelihahmo" parent="." unique_id=2130414200 instance=ExtResource("2_723fy")]
+position = Vector2(198, 113)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1533760971]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=320159591]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1893781669]
+position = Vector2(201, 47)
+shape = SubResource("WorldBoundaryShape2D_723fy")

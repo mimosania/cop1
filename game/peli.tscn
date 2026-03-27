@@ -8,7 +8,7 @@ distance = -94.0
 [node name="Peli" type="Node2D" unique_id=1186789727]
 
 [node name="pelihahmo" parent="." unique_id=2130414200 instance=ExtResource("2_723fy")]
-position = Vector2(198, 113)
+position = Vector2(212, 125)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1533760971]
 

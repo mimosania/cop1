@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://cqxdryoflxxq8"]
 
+[ext_resource type="PackedScene" uid="uid://6wou6sstkbfm" path="res://pelihahmo_tuplahyppy.tscn" id="2_4ltwa"]
 [ext_resource type="PackedScene" uid="uid://d4nmhl5lu0467" path="res://pelihahmo.tscn" id="2_723fy"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_723fy"]
 distance = -94.0
 
 [node name="Peli" type="Node2D" unique_id=1186789727]
+
+[node name="pelihahmo_tuplahyppy" parent="." unique_id=1010869095 instance=ExtResource("2_4ltwa")]
+position = Vector2(99, 96)
 
 [node name="pelihahmo" parent="." unique_id=2130414200 instance=ExtResource("2_723fy")]
 position = Vector2(212, 125)

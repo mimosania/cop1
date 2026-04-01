@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhjxsyobea3qq"
-path="res://.godot/imported/luigersson pyörii.png-b9388a81a14795f89104984869b56937.ctex"
+uid="uid://7jurkjjejib"
+path="res://.godot/imported/luigersson.png-de137d0d9754d436e12cf90310cdb55b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/luigersson pyörii.png"
-dest_files=["res://.godot/imported/luigersson pyörii.png-b9388a81a14795f89104984869b56937.ctex"]
+source_file="res://assets/sprites/player/luigersson.png"
+dest_files=["res://.godot/imported/luigersson.png-de137d0d9754d436e12cf90310cdb55b.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5o1ftxqonwyf"
-path="res://.godot/imported/luigertelu.png-f5c7205c22ea73432b9505eeb3691b1e.ctex"
+uid="uid://cuybajpcawkke"
+path="res://.godot/imported/luigertelumirror.png-43e60541da105ae8520668a995ddcb4b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/luigertelu.png"
-dest_files=["res://.godot/imported/luigertelu.png-f5c7205c22ea73432b9505eeb3691b1e.ctex"]
+source_file="res://assets/sprites/player/luigertelumirror.png"
+dest_files=["res://.godot/imported/luigertelumirror.png-43e60541da105ae8520668a995ddcb4b.ctex"]
 
 [params]
 

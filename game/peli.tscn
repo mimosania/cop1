@@ -9,7 +9,7 @@ distance = -94.0
 [node name="Peli" type="Node2D" unique_id=1186789727]
 
 [node name="pelihahmo_tuplahyppy" parent="." unique_id=1010869095 instance=ExtResource("2_4ltwa")]
-position = Vector2(99, 96)
+position = Vector2(89, 90)
 
 [node name="pelihahmo" parent="." unique_id=2130414200 instance=ExtResource("2_723fy")]
 position = Vector2(212, 125)

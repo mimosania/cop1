@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://6wou6sstkbfm"]
 
-[ext_resource type="Script" uid="uid://dddk8ixwvx5pk" path="res://doublejump_script.gd" id="1_giruw"]
+[ext_resource type="Script" uid="uid://dddk8ixwvx5pk" path="res://assets/scripts/doublejump_script.gd" id="1_giruw"]
 [ext_resource type="Texture2D" uid="uid://5o1ftxqonwyf" path="res://assets/sprites/player/luigertelu.png" id="2_gi83k"]
 [ext_resource type="Texture2D" uid="uid://bhjxsyobea3qq" path="res://assets/sprites/player/luigersson pyörii.png" id="2_giruw"]
 
@@ -103,4 +103,4 @@ autoplay = "idle"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1169613389]
 position = Vector2(5, -32)
-polygon = PackedVector2Array(2, 22, 30, 32, 29, 6, 1, -26, -23, 4, -26, 32)
+polygon = PackedVector2Array(2, 32, 30, 32, 29, 6, 1, -26, -23, 4, -26, 32)

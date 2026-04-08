@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d4nmhl5lu0467"]
 
-[ext_resource type="Script" uid="uid://c20vvxbdtv7xw" path="res://character_body_2d.gd" id="1_1tdvs"]
+[ext_resource type="Script" uid="uid://c20vvxbdtv7xw" path="res://assets/scripts/character_body_2d.gd" id="1_1tdvs"]
 [ext_resource type="Texture2D" uid="uid://5o1ftxqonwyf" path="res://assets/sprites/player/luigertelu.png" id="2_1tdvs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_py07j"]
@@ -49,16 +49,14 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_rdlm7"]
 radius = 31.0
 
-[node name="pelihahmo" type="Node2D" unique_id=2130414200]
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=42348193]
+[node name="pelihahmo" type="CharacterBody2D" unique_id=42348193]
 script = ExtResource("1_1tdvs")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=478537169]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=478537169]
 position = Vector2(7, -37)
 sprite_frames = SubResource("SpriteFrames_r3jtn")
 autoplay = "default"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1612950706]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1612950706]
 position = Vector2(8, -29)
 shape = SubResource("CircleShape2D_rdlm7")

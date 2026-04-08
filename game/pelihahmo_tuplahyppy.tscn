@@ -92,20 +92,15 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_2xj1y"]
-radius = 31.0
-
-[node name="pelihahmo_tuplahyppy" type="Node2D" unique_id=1010869095]
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=821567355]
+[node name="pelihahmo_tuplahyppy" type="CharacterBody2D" unique_id=821567355]
 script = ExtResource("1_giruw")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=2010707516]
-position = Vector2(7, -38)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2010707516]
+position = Vector2(5, -39)
 sprite_frames = SubResource("SpriteFrames_tt0p5")
 animation = &"walking"
 autoplay = "idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1496797014]
-position = Vector2(8, -29)
-shape = SubResource("CircleShape2D_2xj1y")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1169613389]
+position = Vector2(5, -32)
+polygon = PackedVector2Array(2, 22, 30, 32, 29, 6, 1, -26, -23, 4, -26, 32)

@@ -98,9 +98,11 @@ script = ExtResource("1_giruw")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2010707516]
 position = Vector2(5, -39)
 sprite_frames = SubResource("SpriteFrames_tt0p5")
-animation = &"walking"
+animation = &"doublejump"
 autoplay = "idle"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1169613389]
 position = Vector2(5, -32)
 polygon = PackedVector2Array(2, 32, 30, 32, 29, 6, 1, -26, -23, 4, -26, 32)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1485982022]

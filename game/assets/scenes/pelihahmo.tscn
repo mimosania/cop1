@@ -50,6 +50,7 @@ animations = [{
 radius = 31.0
 
 [node name="pelihahmo" type="CharacterBody2D" unique_id=42348193]
+collision_layer = 2
 script = ExtResource("1_1tdvs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=478537169]

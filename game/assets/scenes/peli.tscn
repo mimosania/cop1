@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://6wou6sstkbfm" path="res://assets/scenes/pelihahmo_tuplahyppy.tscn" id="2_4ltwa"]
 [ext_resource type="Texture2D" uid="uid://ct4o5tpdn0xra" path="res://assets/sprites/tiles/FreeBlocks.png" id="3_4ltwa"]
+[ext_resource type="PackedScene" uid="uid://cunoynxwdr3em" path="res://assets/scenes/killzone.tscn" id="3_adkwl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jk4ga"]
 texture = ExtResource("3_4ltwa")
@@ -282,8 +283,14 @@ texture = ExtResource("3_4ltwa")
 14:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_itmq7"]
-physics_layer_0/collision_layer = 3
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_jk4ga")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2tf6u"]
+size = Vector2(596, 21)
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_g0fxr"]
+points = PackedVector2Array(1, 0, 55, 0, 43, -22, 13, -22)
 
 [node name="Peli" type="Node2D" unique_id=1186789727]
 
@@ -297,6 +304,18 @@ layer_0/tile_data = PackedInt32Array(524292, 327680, 5, 589828, 327680, 6, 65536
 
 [node name="pelihahmo_tuplahyppy" parent="." unique_id=1010869095 instance=ExtResource("2_4ltwa")]
 position = Vector2(132, -641)
+collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="pelihahmo_tuplahyppy" unique_id=808029860]
 position = Vector2(7, -27)
+
+[node name="Killzone" parent="." unique_id=463157565 instance=ExtResource("3_adkwl")]
+position = Vector2(470, -157)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=387442403]
+position = Vector2(175, 244)
+shape = SubResource("RectangleShape2D_2tf6u")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Killzone" unique_id=140811955]
+position = Vector2(419, -227)
+shape = SubResource("ConvexPolygonShape2D_g0fxr")

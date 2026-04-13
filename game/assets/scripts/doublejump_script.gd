@@ -8,7 +8,10 @@ var alive = true
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 func die():
-	animated_sprite.play("d")
+	animated_sprite.play("död")
+	alive = false
+	velocity.y = JUMP_VELOCITY
+	velocity.x = velocity.x*-1
 
 func _physics_process(delta: float) -> void:
 
@@ -19,32 +22,32 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		has_double_jumped = false
 		
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-	elif Input.is_action_just_pressed("jump") and !is_on_floor() and !has_double_jumped:
-		velocity.y = JUMP_VELOCITY
-		has_double_jumped = true
+	if alive:
+		if Input.is_action_just_pressed("jump") and is_on_floor():
+			velocity.y = JUMP_VELOCITY
+		elif Input.is_action_just_pressed("jump") and !is_on_floor() and !has_double_jumped:
+			velocity.y = JUMP_VELOCITY
+			has_double_jumped = true
+			
+		var direction := Input.get_axis("move_left", "move_right")
 		
-	var direction := Input.get_axis("move_left", "move_right")
-	
-	if direction > 0:
-		animated_sprite.flip_h = false
-	elif direction < 0:
-		animated_sprite.flip_h = true
+		if direction > 0:
+			animated_sprite.flip_h = false
+		elif direction < 0:
+			animated_sprite.flip_h = true
 
 
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		if direction:
+			velocity.x = direction * SPEED
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
 
-	#Animation
-	if has_double_jumped == true:
-		animated_sprite.play("doublejump")
-	if velocity.x == 0 and is_on_floor():
-		animated_sprite.play("idle")
-	if velocity.x != 0 and is_on_floor():
-		animated_sprite.play("walking")
-	
+		#Animation
+		if has_double_jumped == true:
+			animated_sprite.play("doublejump")
+		if velocity.x == 0 and is_on_floor():
+			animated_sprite.play("idle")
+		if velocity.x != 0 and is_on_floor():
+			animated_sprite.play("walking")
+		
 	move_and_slide()

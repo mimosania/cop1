@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://6wou6sstkbfm" path="res://assets/scenes/pelihahmo_tuplahyppy.tscn" id="2_4ltwa"]
 [ext_resource type="Texture2D" uid="uid://ct4o5tpdn0xra" path="res://assets/sprites/tiles/FreeBlocks.png" id="3_4ltwa"]
 [ext_resource type="PackedScene" uid="uid://cunoynxwdr3em" path="res://assets/scenes/killzone.tscn" id="3_adkwl"]
+[ext_resource type="Script" uid="uid://coej1tpfngxli" path="res://assets/scripts/killzone.gd" id="4_2tf6u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jk4ga"]
 texture = ExtResource("3_4ltwa")
@@ -311,6 +312,7 @@ position = Vector2(7, -27)
 
 [node name="Killzone" parent="." unique_id=463157565 instance=ExtResource("3_adkwl")]
 position = Vector2(470, -157)
+script = ExtResource("4_2tf6u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=387442403]
 position = Vector2(175, 244)

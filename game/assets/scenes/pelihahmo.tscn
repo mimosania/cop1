@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c20vvxbdtv7xw" path="res://assets/scripts/character_body_2d.gd" id="1_1tdvs"]
 [ext_resource type="Texture2D" uid="uid://5o1ftxqonwyf" path="res://assets/sprites/player/luigertelu.png" id="2_1tdvs"]
+[ext_resource type="Texture2D" uid="uid://bhjxsyobea3qq" path="res://assets/sprites/player/luigersson pyörii.png" id="3_jfmis"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_py07j"]
 atlas = ExtResource("2_1tdvs")
@@ -22,6 +23,22 @@ region = Rect2(140, 0, 70, 82)
 [sub_resource type="AtlasTexture" id="AtlasTexture_moa0c"]
 atlas = ExtResource("2_1tdvs")
 region = Rect2(210, 0, 70, 82)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfmis"]
+atlas = ExtResource("3_jfmis")
+region = Rect2(0, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gennh"]
+atlas = ExtResource("3_jfmis")
+region = Rect2(75, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjbjd"]
+atlas = ExtResource("3_jfmis")
+region = Rect2(0, 75, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4pbb4"]
+atlas = ExtResource("3_jfmis")
+region = Rect2(75, 75, 75, 75)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_r3jtn"]
 animations = [{
@@ -44,13 +61,29 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jfmis")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gennh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjbjd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4pbb4")
+}],
+"loop": true,
+"name": &"doublejump",
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rdlm7"]
 radius = 31.0
 
 [node name="pelihahmo" type="CharacterBody2D" unique_id=42348193]
-collision_layer = 2
 script = ExtResource("1_1tdvs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=478537169]
@@ -59,5 +92,7 @@ sprite_frames = SubResource("SpriteFrames_r3jtn")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1612950706]
-position = Vector2(8, -29)
+position = Vector2(8, -26)
 shape = SubResource("CircleShape2D_rdlm7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1750874904]

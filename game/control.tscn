@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://ddw8eu16j846s"]
+
+[ext_resource type="Texture2D" uid="uid://cfxllms4g8a2q" path="res://assets/sprites/menu/menu.png" id="1_62e2m"]
+[ext_resource type="Script" uid="uid://diae7ykr3dla2" path="res://control.gd" id="1_qtu10"]
+[ext_resource type="FontFile" uid="uid://bpo5j8egvqirq" path="res://assets/sprites/menu/SuperMario256.ttf" id="2_qtu10"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ee4bf"]
+texture = ExtResource("1_62e2m")
+modulate_color = Color(0.70380783, 0.70380783, 0.70380783, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uchyk"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.2901961)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[node name="Control" type="Control" unique_id=88217561]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -208.0
+offset_top = -47.0
+offset_right = 167.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qtu10")
+
+[node name="Panel" type="Panel" parent="." unique_id=1016135416]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -6.0
+offset_right = 2.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ee4bf")
+
+[node name="Label" type="Label" parent="Panel" unique_id=1057546257]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -216.5
+offset_top = 176.0
+offset_right = 186.5
+offset_bottom = 345.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.7987342, 0.9559451, 2.3102762e-06, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_constants/shadow_offset_x = 8
+theme_override_fonts/font = ExtResource("2_qtu10")
+theme_override_font_sizes/font_size = 53
+text = "Cop projekti"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1202995238]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -237.5
+offset_top = 20.5
+offset_right = 234.5
+offset_bottom = 272.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=135484363]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_uchyk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uchyk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uchyk")
+text = "Start game"
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=935007591]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_uchyk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uchyk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uchyk")
+text = "Options"
+
+[node name="Button3" type="Button" parent="VBoxContainer" unique_id=1385009200]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/h_separation = 9
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_uchyk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uchyk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uchyk")
+text = "Exit"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_exit_pressed"]

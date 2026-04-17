@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bats4nphumgq7"]
+
+[ext_resource type="Script" uid="uid://cvfuny0w1lmuf" path="res://assets/scripts/enemy.gd" id="1_55kjn"]
+[ext_resource type="Texture2D" uid="uid://7jurkjjejib" path="res://assets/sprites/player/luigersson.png" id="1_kbpvo"]
+[ext_resource type="PackedScene" uid="uid://cunoynxwdr3em" path="res://assets/scenes/killzone.tscn" id="2_55kjn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4rmu"]
+atlas = ExtResource("1_kbpvo")
+region = Rect2(66, 62, 33, 31)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ovi8q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4rmu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t2q6g"]
+size = Vector2(32, 31)
+
+[node name="enemy" type="Node2D" unique_id=1942988220]
+light_mask = 9
+visibility_layer = 9
+script = ExtResource("1_55kjn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=71033268]
+sprite_frames = SubResource("SpriteFrames_ovi8q")
+
+[node name="Killzone" parent="." unique_id=463157565 instance=ExtResource("2_55kjn")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=35483774]
+visibility_layer = 9
+shape = SubResource("RectangleShape2D_t2q6g")
+
+[node name="RayCastRight" type="RayCast2D" parent="." unique_id=1018652351]
+target_position = Vector2(17, 0)
+collision_mask = 9
+
+[node name="RayCastLeft" type="RayCast2D" parent="." unique_id=1277151418]
+target_position = Vector2(-17, 0)
+collision_mask = 9

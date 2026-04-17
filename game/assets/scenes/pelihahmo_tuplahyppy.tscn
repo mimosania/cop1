@@ -136,5 +136,5 @@ animation = &"död"
 autoplay = "idle"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1169613389]
-position = Vector2(5, -32)
+position = Vector2(3, -35)
 polygon = PackedVector2Array(2, 32, 30, 32, 29, 6, 1, -26, -23, 4, -26, 32)

@@ -7,6 +7,7 @@ var has_double_jumped
 var alive = true
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+
 func die():
 	animated_sprite.play("död")
 	alive = false
@@ -49,5 +50,5 @@ func _physics_process(delta: float) -> void:
 			animated_sprite.play("idle")
 		if velocity.x != 0 and is_on_floor():
 			animated_sprite.play("walking")
-		
+	
 	move_and_slide()

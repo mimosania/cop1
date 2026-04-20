@@ -132,9 +132,10 @@ script = ExtResource("1_giruw")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2010707516]
 position = Vector2(5, -39)
 sprite_frames = SubResource("SpriteFrames_tt0p5")
-animation = &"idle"
+animation = &"död"
 autoplay = "idle"
+frame_progress = 0.24832132
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1169613389]
 position = Vector2(3, -35)
-polygon = PackedVector2Array(2, 32, 30, 32, 29, 6, 1, -26, -9.099304, -13.375862, -23, 4, -26, 32)
+polygon = PackedVector2Array(28, 32, 27, 6, -1, -26, -25, 4, -28, 32)

@@ -317,7 +317,7 @@ position = Vector2(676, -53)
 position = Vector2(777, -481)
 
 [node name="pelihahmo_tuplahyppy" parent="." unique_id=1010869095 instance=ExtResource("2_4ltwa")]
-position = Vector2(132, -641)
+position = Vector2(140, -462)
 collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="pelihahmo_tuplahyppy" unique_id=808029860]

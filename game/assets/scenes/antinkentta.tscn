@@ -550,7 +550,6 @@ texture = ExtResource("3_g122x")
 4:14/0 = 0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_g122x"]
-load_path = "res://.godot/imported/16-bit-spike-Sheet.png-bd91c6b49e501e30beb5add2faabca01.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w1e08"]
 texture = SubResource("CompressedTexture2D_g122x")
@@ -574,11 +573,9 @@ size = Vector2(76, 43)
 [node name="Node2D" type="Node2D" unique_id=693643132]
 
 [node name="pelihahmo" parent="." unique_id=42348193 instance=ExtResource("1_em0qr")]
-position = Vector2(177, 11)
+collision_layer = 2
 
-[node name="Camera2D" type="Camera2D" parent="pelihahmo" unique_id=233977368]
-position = Vector2(-177, -11)
-position_smoothing_enabled = true
+[node name="Camera2D" type="Camera2D" parent="pelihahmo" unique_id=208388809]
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1810865475]
 position = Vector2(75, -81)
@@ -595,6 +592,7 @@ shape = SubResource("RectangleShape2D_5ce4r")
 
 [node name="Killzone2" parent="." unique_id=50798608 instance=ExtResource("4_1hd4o")]
 position = Vector2(470, -157)
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone2" unique_id=2089414865]
 position = Vector2(926, 20.5)

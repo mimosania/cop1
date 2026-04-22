@@ -21,7 +21,14 @@ const DASH_TIME = 0.15
 var dashing = false
 var dash_timer = 0.0
 
+#WALLJUMP
+var doWallJump = false
+var jumpsMade =0
+##
 
+#WALLSLIDE
+#const WALL_SLIDING_SPEED = 1200
+#var gravity = ProjectSettings.get_setting(physics)
 
 func _physics_process(delta: float) -> void:
 	if dashing:
@@ -71,7 +78,20 @@ func _physics_process(delta: float) -> void:
 			animated_sprite.play("idle")
 		else:
 			animated_sprite.play("walking")
-
+#WALLJUMP
+	if Input.is_action_just_pressed("ui_accept"):
+		if is_on_floor_only():
+			velocity.y = JUMP_VELOCITY
+			velocity.x = -direction * SPEED
+			doWallJump  = true
+			timer.start()
+		elif is_on_floor() ||jumpsMade < 2:
+			velocity.y= JUMP_VELOCITY
+			jumpsMade += 1
+			
+	if direction && not doWallJump: velocity.x = direction * SPEED
+	elif not  doWallJump: velocity.x = move_toward(velocity.x, 0, SPEED)
+###
 
 #WALLSLIDE
 #	if is_on_wall_only(): velocity.y = WALL_SLIDING_SPEED * delta
@@ -79,7 +99,10 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-
+#WALLJUMP
+func _on_wall_jump_timer_timeout():
+	doWallJump = false
+##
 
 
 func _on_timer_timeout() -> void:

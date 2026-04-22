@@ -144,3 +144,9 @@ autoplay = "idle"
 position = Vector2(1, -38)
 scale = Vector2(0.93749994, 1.012931)
 polygon = PackedVector2Array(2, 32, 30, 32, 29, 6, 1.0666667, -34.553196, -23, 4, -26, 32)
+
+[node name="Timer" type="Timer" parent="." unique_id=1405627724]
+wait_time = 0.4
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

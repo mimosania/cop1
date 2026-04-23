@@ -2,16 +2,16 @@
 
 [ext_resource type="Script" uid="uid://047tw4csj7ml" path="res://assets/scripts/enemy_vertical.gd" id="1_nvqrg"]
 [ext_resource type="Texture2D" uid="uid://desf1tsa12fl5" path="res://assets/sprites/enemy/pow.png" id="2_7hydv"]
-[ext_resource type="Texture2D" uid="uid://7jurkjjejib" path="res://assets/sprites/player/luigersson.png" id="2_p678c"]
 [ext_resource type="PackedScene" uid="uid://cunoynxwdr3em" path="res://assets/scenes/killzone.tscn" id="3_7hydv"]
+[ext_resource type="Texture2D" uid="uid://d0gkdqsqssyib" path="res://assets/sprites/mobs/kummitusvihu.png" id="3_p678c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uc2hm"]
 atlas = ExtResource("2_7hydv")
 region = Rect2(0, 0, 104, 99)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_l4rmu"]
-atlas = ExtResource("2_p678c")
-region = Rect2(66, 62, 33, 31)
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hydv"]
+atlas = ExtResource("3_p678c")
+region = Rect2(0, 0, 39, 52)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ovi8q"]
 animations = [{
@@ -25,7 +25,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_l4rmu")
+"texture": SubResource("AtlasTexture_7hydv")
 }],
 "loop": true,
 "name": &"default",
@@ -33,10 +33,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t2q6g"]
-size = Vector2(32, 30.25)
+size = Vector2(25, 30.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p678c"]
-size = Vector2(32, 0.5)
+size = Vector2(26, 3)
 
 [node name="enemy_vertical" type="Node2D" unique_id=1942988220]
 light_mask = 4
@@ -44,6 +44,7 @@ visibility_layer = 13
 script = ExtResource("1_nvqrg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=71033268]
+scale = Vector2(1.0384616, 1)
 sprite_frames = SubResource("SpriteFrames_ovi8q")
 autoplay = "default"
 
@@ -54,7 +55,6 @@ collision_mask = 6
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=35483774]
 light_mask = 5
 visibility_layer = 13
-position = Vector2(0, 0.125)
 shape = SubResource("RectangleShape2D_t2q6g")
 
 [node name="RayCastUp" type="RayCast2D" parent="." unique_id=1018652351]
@@ -68,10 +68,13 @@ collision_mask = 9
 [node name="Timer" type="Timer" parent="." unique_id=632075356]
 wait_time = 0.5
 
-[node name="Area2D" type="Area2D" parent="." unique_id=607085870]
+[node name="enemy_killzone" type="Area2D" parent="." unique_id=607085870]
+collision_layer = 16
+collision_mask = 16
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2059796536]
-position = Vector2(0, -15)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_killzone" unique_id=2059796536]
+position = Vector2(0, -17)
 shape = SubResource("RectangleShape2D_p678c")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="enemy_killzone" to="." method="_on_enemy_killzone_area_entered"]

@@ -126,7 +126,12 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mn0io"]
+size = Vector2(56.5, 4)
+
 [node name="pelihahmo_tuplahyppy" type="CharacterBody2D" unique_id=821567355]
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_giruw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2010707516]
@@ -139,3 +144,13 @@ frame_progress = 0.24832132
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1169613389]
 position = Vector2(3, -35)
 polygon = PackedVector2Array(28, 32, 27, 6, -1, -26, -25, 4, -28, 32)
+
+[node name="AttackHitbox" type="Area2D" parent="." unique_id=116334518]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox" unique_id=2119132158]
+position = Vector2(2.75, -1)
+shape = SubResource("RectangleShape2D_mn0io")
+
+[connection signal="area_entered" from="AttackHitbox" to="." method="_on_attack_hitbox_area_entered"]

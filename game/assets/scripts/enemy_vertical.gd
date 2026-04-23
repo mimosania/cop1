@@ -10,6 +10,7 @@ var direction = 1
 func die():
 	alive = false
 	get_node("Killzone").queue_free()
+	get_node("enemy_killzone").queue_free()
 	timer.start()
 	animated_sprite.play("dead")
 	
@@ -23,4 +24,7 @@ func _process(delta: float) -> void:
 		if ray_cast_down.is_colliding():
 			direction = -1
 		position.y += direction * delta * 140
-	
+
+
+func _on_enemy_killzone_area_entered(area) -> void:
+	die()

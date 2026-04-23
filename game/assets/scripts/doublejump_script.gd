@@ -55,3 +55,8 @@ func _physics_process(delta: float) -> void:
 			animated_sprite.play("walking")
 		
 	move_and_slide()
+
+
+func _on_attack_hitbox_area_entered(area) -> void:
+	velocity.y = JUMP_VELOCITY
+	has_double_jumped = false

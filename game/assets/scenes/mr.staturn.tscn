@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cjd5yc4r2umcv"]
+
+[ext_resource type="Texture2D" uid="uid://cvn7i0qllf6qv" path="res://assets/sprites/vihut/vihut-removebg-preview.png" id="1_wtcfe"]
+[ext_resource type="PackedScene" uid="uid://cunoynxwdr3em" path="res://assets/scenes/killzone.tscn" id="2_0e48y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0e48y"]
+atlas = ExtResource("1_wtcfe")
+region = Rect2(0, 0, 330, 378)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epypp"]
+atlas = ExtResource("1_wtcfe")
+region = Rect2(330, 0, 330, 378)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0hol4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0e48y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epypp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
+size = Vector2(166.36786, 169.20003)
+
+[node name="HerraVihu" type="Node2D" unique_id=1371032919]
+position = Vector2(28, 9)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1104385435]
+position = Vector2(0.9999995, -12)
+scale = Vector2(0.35378787, 0.35185188)
+sprite_frames = SubResource("SpriteFrames_0hol4")
+autoplay = "default"
+frame_progress = 0.12212316
+
+[node name="Killzone" parent="AnimatedSprite2D" unique_id=463157565 instance=ExtResource("2_0e48y")]
+position = Vector2(-55.628574, 1.7999998)
+rotation = 1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Killzone" unique_id=1320087128]
+position = Vector2(23.778946, -64.108154)
+scale = Vector2(1, 0.99999976)
+shape = SubResource("RectangleShape2D_epypp")

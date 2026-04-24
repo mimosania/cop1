@@ -57,6 +57,7 @@ animations = [{
 script = ExtResource("1_ghg8x")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2130495549]
+position = Vector2(7, -42)
 sprite_frames = SubResource("SpriteFrames_eick0")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=663337205]

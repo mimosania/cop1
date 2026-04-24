@@ -79,7 +79,7 @@ func _physics_process(delta: float) -> void:
 		else:
 			animated_sprite.play("walking")
 #WALLJUMP
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("jump"):
 		if is_on_floor_only():
 			velocity.y = JUMP_VELOCITY
 			velocity.x = -direction * SPEED

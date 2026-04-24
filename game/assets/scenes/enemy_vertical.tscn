@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://c8axpx5kqb3eb"]
 
 [ext_resource type="Script" uid="uid://047tw4csj7ml" path="res://assets/scripts/enemy_vertical.gd" id="1_nvqrg"]
-[ext_resource type="Texture2D" uid="uid://desf1tsa12fl5" path="res://assets/sprites/enemy/pow.png" id="2_7hydv"]
+[ext_resource type="Texture2D" uid="uid://desf1tsa12fl5" path="res://assets/sprites/mobs/pow.png" id="2_7hydv"]
 [ext_resource type="PackedScene" uid="uid://cunoynxwdr3em" path="res://assets/scenes/killzone.tscn" id="3_7hydv"]
 [ext_resource type="Texture2D" uid="uid://d0gkdqsqssyib" path="res://assets/sprites/mobs/kummitusvihu.png" id="3_p678c"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uc2hm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_p678c"]
 atlas = ExtResource("2_7hydv")
 region = Rect2(0, 0, 104, 99)
 
@@ -17,7 +17,7 @@ region = Rect2(0, 0, 39, 52)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uc2hm")
+"texture": SubResource("AtlasTexture_p678c")
 }],
 "loop": true,
 "name": &"dead",
@@ -46,6 +46,7 @@ script = ExtResource("1_nvqrg")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=71033268]
 scale = Vector2(1.0384616, 1)
 sprite_frames = SubResource("SpriteFrames_ovi8q")
+animation = &"dead"
 autoplay = "default"
 
 [node name="Killzone" parent="." unique_id=463157565 instance=ExtResource("3_7hydv")]

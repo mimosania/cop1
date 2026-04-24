@@ -51,7 +51,7 @@ func _physics_process(delta: float) -> void:
 
 		#Animation
 		if has_wall_jumped == true:
-			animated_sprite.play("doublejump")
+			animated_sprite.play("walljump")
 		if velocity.x == 0 and is_on_floor():
 			animated_sprite.play("idle")
 		if velocity.x != 0 and is_on_floor():

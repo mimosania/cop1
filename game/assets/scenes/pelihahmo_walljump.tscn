@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bhjxsyobea3qq" path="res://assets/sprites/player/luigersson pyörii.png" id="2_welq6"]
 [ext_resource type="Texture2D" uid="uid://b1q4vjhi2iqfs" path="res://assets/sprites/player/luigersson död.png" id="3_kmqxo"]
 [ext_resource type="Texture2D" uid="uid://5o1ftxqonwyf" path="res://assets/sprites/player/luigertelu.png" id="4_y2exg"]
+[ext_resource type="Texture2D" uid="uid://bh4fceo3e8iji" path="res://assets/sprites/player/luigersson_littana2.png" id="5_welq6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gi83k"]
 atlas = ExtResource("2_welq6")
@@ -60,6 +61,18 @@ region = Rect2(140, 0, 70, 82)
 [sub_resource type="AtlasTexture" id="AtlasTexture_moa0c"]
 atlas = ExtResource("4_y2exg")
 region = Rect2(210, 0, 70, 82)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmqxo"]
+atlas = ExtResource("5_welq6")
+region = Rect2(172, 0, 86, 187)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2exg"]
+atlas = ExtResource("5_welq6")
+region = Rect2(86, 0, 86, 187)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmrfk"]
+atlas = ExtResource("5_welq6")
+region = Rect2(0, 0, 86, 187)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tt0p5"]
 animations = [{
@@ -124,6 +137,20 @@ animations = [{
 "loop": true,
 "name": &"walking",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kmqxo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y2exg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmrfk")
+}],
+"loop": true,
+"name": &"walljump",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mn0io"]
@@ -137,9 +164,8 @@ script = ExtResource("1_w8wwy")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2010707516]
 position = Vector2(5, -39)
 sprite_frames = SubResource("SpriteFrames_tt0p5")
-animation = &"död"
+animation = &"walljump"
 autoplay = "idle"
-frame_progress = 0.24832132
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1169613389]
 position = Vector2(3, -35)

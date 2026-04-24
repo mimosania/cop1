@@ -127,9 +127,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mn0io"]
-size = Vector2(56.5, 4)
+size = Vector2(58, 4)
 
 [node name="pelihahmo_tuplahyppy" type="CharacterBody2D" unique_id=821567355]
+z_index = 1
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_giruw")
@@ -150,7 +151,7 @@ collision_layer = 16
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox" unique_id=2119132158]
-position = Vector2(2.75, -1)
+position = Vector2(3, -1)
 shape = SubResource("RectangleShape2D_mn0io")
 
 [connection signal="area_entered" from="AttackHitbox" to="." method="_on_attack_hitbox_area_entered"]

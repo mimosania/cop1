@@ -33,5 +33,5 @@ func _process(delta: float) -> void:
 		
 
 
-func _on_enemy_killzone_area_entered(area: Area2D) -> void:
+func _on_enemy_killzone_area_entered(_area) -> void:
 	die()

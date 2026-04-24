@@ -3,7 +3,6 @@ var alive = true
 var direction = 1
 @onready var ray_cast_up: RayCast2D = $RayCastUp
 @onready var ray_cast_down: RayCast2D = $RayCastDown
-@onready var ray_cast_player: RayCast2D = $RayCastPlayer
 @onready var timer: Timer = $Timer
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -26,5 +25,5 @@ func _process(delta: float) -> void:
 		position.y += direction * delta * 140
 
 
-func _on_enemy_killzone_area_entered(area) -> void:
+func _on_enemy_killzone_area_entered(_area) -> void:
 	die()

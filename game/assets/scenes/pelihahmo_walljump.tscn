@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://dvp60gei2fstx"]
+
+[ext_resource type="Script" uid="uid://bb52e0qu4udbw" path="res://pelihahmo_walljump.gd" id="1_w8wwy"]
+[ext_resource type="Texture2D" uid="uid://bhjxsyobea3qq" path="res://assets/sprites/player/luigersson pyörii.png" id="2_welq6"]
+[ext_resource type="Texture2D" uid="uid://b1q4vjhi2iqfs" path="res://assets/sprites/player/luigersson död.png" id="3_kmqxo"]
+[ext_resource type="Texture2D" uid="uid://5o1ftxqonwyf" path="res://assets/sprites/player/luigertelu.png" id="4_y2exg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gi83k"]
+atlas = ExtResource("2_welq6")
+region = Rect2(0, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ms1kx"]
+atlas = ExtResource("2_welq6")
+region = Rect2(75, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tt0p5"]
+atlas = ExtResource("2_welq6")
+region = Rect2(0, 75, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xj1y"]
+atlas = ExtResource("2_welq6")
+region = Rect2(75, 75, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mj2mw"]
+atlas = ExtResource("3_kmqxo")
+region = Rect2(0, 75, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2gcw6"]
+atlas = ExtResource("3_kmqxo")
+region = Rect2(75, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jb36n"]
+atlas = ExtResource("3_kmqxo")
+region = Rect2(0, 0, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08bqc"]
+atlas = ExtResource("3_kmqxo")
+region = Rect2(75, 75, 75, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wq0n1"]
+atlas = ExtResource("4_y2exg")
+region = Rect2(280, 0, 70, 82)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_py07j"]
+atlas = ExtResource("4_y2exg")
+region = Rect2(280, 0, 70, 82)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1tdvs"]
+atlas = ExtResource("4_y2exg")
+region = Rect2(0, 0, 70, 82)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3jtn"]
+atlas = ExtResource("4_y2exg")
+region = Rect2(70, 0, 70, 82)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdlm7"]
+atlas = ExtResource("4_y2exg")
+region = Rect2(140, 0, 70, 82)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_moa0c"]
+atlas = ExtResource("4_y2exg")
+region = Rect2(210, 0, 70, 82)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tt0p5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gi83k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ms1kx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tt0p5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xj1y")
+}],
+"loop": true,
+"name": &"doublejump",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mj2mw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2gcw6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jb36n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08bqc")
+}],
+"loop": true,
+"name": &"död",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wq0n1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_py07j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1tdvs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3jtn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdlm7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_moa0c")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mn0io"]
+size = Vector2(56.5, 4)
+
+[node name="pelihahmo_walljump" type="CharacterBody2D" unique_id=821567355]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_w8wwy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2010707516]
+position = Vector2(5, -39)
+sprite_frames = SubResource("SpriteFrames_tt0p5")
+animation = &"död"
+autoplay = "idle"
+frame_progress = 0.24832132
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1169613389]
+position = Vector2(3, -35)
+polygon = PackedVector2Array(28, 32, 27, 6, -1, -26, -25, 4, -28, 32)
+
+[node name="AttackHitbox" type="Area2D" parent="." unique_id=116334518]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox" unique_id=2119132158]
+position = Vector2(2.75, -1)
+shape = SubResource("RectangleShape2D_mn0io")
+
+[connection signal="area_entered" from="AttackHitbox" to="." method="_on_attack_hitbox_area_entered"]

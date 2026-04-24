@@ -59,3 +59,10 @@ func _physics_process(delta: float) -> void:
 func _on_attack_hitbox_area_entered(_area) -> void:
 	velocity.y = JUMP_VELOCITY
 	has_double_jumped = false
+
+
+func chill():
+	animated_sprite.play("chill")
+	velocity.x = 0
+	velocity.y = 0
+	alive = false

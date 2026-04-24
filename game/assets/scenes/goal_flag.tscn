@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c3jwrjmk4l21i"]
 
 [ext_resource type="Texture2D" uid="uid://imxn8ca1ui1w" path="res://assets/sprites/tiles/flag.png" id="1_17b7h"]
+[ext_resource type="Script" uid="uid://dmpecnmuck3dn" path="res://assets/scripts/goal_flag.gd" id="1_q1jio"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q1jio"]
 atlas = ExtResource("1_17b7h")
@@ -36,15 +37,14 @@ animations = [{
 
 [node name="GoalFlag" type="Area2D" unique_id=1928462916]
 position = Vector2(2, -2)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1872978183]
-position = Vector2(2.463913, -44.498833)
-scale = Vector2(2.2548077, 2.3109949)
-polygon = PackedVector2Array(-7.7923107, 18.111265, -1.7923107, 10.111264, -1.792326, -6.360324, -1.7923107, -64.88869, 0.20768929, -64.88869, 0.20768738, -6.3139153, 0.20768929, 10.111264, 5.2076893, 18.111265)
+collision_mask = 2
+script = ExtResource("1_q1jio")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1926881104]
 position = Vector2(31, -102)
 scale = Vector2(2.4772727, 2.47093)
 sprite_frames = SubResource("SpriteFrames_ritwv")
 autoplay = "default"
-frame_progress = 0.3807904
+frame_progress = 0.47097299
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

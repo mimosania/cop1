@@ -28,7 +28,7 @@ func _physics_process(delta: float) -> void:
 	if alive:
 		if Input.is_action_just_pressed("jump") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
-		elif Input.is_action_just_pressed("jump") and is_on_wall() and !has_double_jumped:
+		elif Input.is_action_just_pressed("jump") and !is_on_floor() and !has_double_jumped:
 			velocity.y = JUMP_VELOCITY
 			has_double_jumped = true
 			

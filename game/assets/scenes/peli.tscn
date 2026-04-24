@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://bats4nphumgq7" path="res://assets/scenes/enemy.tscn" id="5_g0fxr"]
 [ext_resource type="Texture2D" uid="uid://da4we0fx5ba0a" path="res://assets/sprites/tiles/Terrain (16x16).png" id="6_pkg5r"]
 [ext_resource type="PackedScene" uid="uid://c3jwrjmk4l21i" path="res://assets/scenes/goal_flag.tscn" id="7_u1huk"]
-[ext_resource type="Script" uid="uid://dmpecnmuck3dn" path="res://assets/scripts/goal_flag.gd" id="8_vs86r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jk4ga"]
 texture = ExtResource("3_4ltwa")
@@ -638,6 +637,9 @@ texture = ExtResource("3_4ltwa")
 sources/0 = SubResource("TileSetAtlasSource_u1huk")
 sources/1 = SubResource("TileSetAtlasSource_vs86r")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eu8gx"]
+size = Vector2(20, 207)
+
 [node name="Peli" type="Node2D" unique_id=1186789727]
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1517083564]
@@ -667,7 +669,7 @@ position = Vector2(676, -53)
 position = Vector2(914, -455)
 
 [node name="pelihahmo_tuplahyppy" parent="." unique_id=1010869095 instance=ExtResource("2_4ltwa")]
-position = Vector2(1063, 312)
+position = Vector2(1012, 292)
 slide_on_ceiling = false
 floor_stop_on_slope = false
 floor_block_on_wall = false
@@ -741,9 +743,7 @@ layer_1/tile_data = PackedInt32Array(-3145755, 1179648, 5, -3080219, 1179648, 5,
 
 [node name="GoalFlag" parent="." unique_id=1620593120 instance=ExtResource("7_u1huk")]
 position = Vector2(1173, 335)
-script = ExtResource("8_vs86r")
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="GoalFlag" unique_id=1846895924]
-position = Vector2(3.0000458, -41.999992)
-scale = Vector2(2.2548077, 2.3109949)
-polygon = PackedVector2Array(-7.7923107, 18.111265, -1.7923107, 10.111264, -1.792326, -6.360324, -1.7923107, -64.88869, 0.20768929, -64.88869, 0.20768738, -6.3139153, 0.20768929, 10.111264, 5.2076893, 18.111265)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoalFlag" unique_id=1253391215]
+position = Vector2(0, -102.5)
+shape = SubResource("RectangleShape2D_eu8gx")

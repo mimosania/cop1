@@ -669,7 +669,7 @@ position = Vector2(676, -53)
 position = Vector2(914, -455)
 
 [node name="pelihahmo_tuplahyppy" parent="." unique_id=1010869095 instance=ExtResource("2_4ltwa")]
-position = Vector2(1012, 292)
+position = Vector2(148, 68)
 slide_on_ceiling = false
 floor_stop_on_slope = false
 floor_block_on_wall = false
@@ -747,5 +747,3 @@ position = Vector2(1173, 335)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GoalFlag" unique_id=1253391215]
 position = Vector2(0, -102.5)
 shape = SubResource("RectangleShape2D_eu8gx")
-
-[connection signal="body_entered" from="GoalFlag" to="pelihahmo_tuplahyppy" method="_on_goal_flag_body_entered"]

@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://d167dxei8gmc0"]
 
 [ext_resource type="Texture2D" uid="uid://da4we0fx5ba0a" path="res://assets/sprites/tiles/Terrain (16x16).png" id="1_07ati"]
+[ext_resource type="Script" uid="uid://bk54aowd0wlee" path="res://assets/scenes/senninkentta.gd" id="1_jftav"]
 [ext_resource type="Texture2D" uid="uid://brvpmesjb1ivj" path="res://assets/sprites/background/Blue.png" id="1_oq3r7"]
 [ext_resource type="PackedScene" uid="uid://dvp60gei2fstx" path="res://assets/scenes/pelihahmo_walljump.tscn" id="2_4pefy"]
 [ext_resource type="PackedScene" uid="uid://c3jwrjmk4l21i" path="res://assets/scenes/goal_flag.tscn" id="4_dwcff"]
@@ -303,6 +304,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_oq3r7")
 
 [node name="senninkentta" type="Node2D" unique_id=1300329203]
+script = ExtResource("1_jftav")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2053441748]
 modulate = Color(0.23407742, 0.43538186, 0.37107998, 1)

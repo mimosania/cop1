@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cs8ibdg7nbnxf"]
 
-[ext_resource type="Script" uid="uid://cy3go4o7ktuwm" path="res://level_transitio.gd" id="1_p7sjb"]
+[ext_resource type="Script" uid="uid://cy3go4o7ktuwm" path="res://assets/scenes/level_transitio.gd" id="1_p7sjb"]
 [ext_resource type="Texture2D" uid="uid://dv4f3qh73t5ir" path="res://assets/sprites/background/level1-1.png" id="2_ivrn3"]
 
 [node name="LevelTransitio" type="Control" unique_id=1025558730]
@@ -11,14 +11,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_p7sjb")
-next_scene = null
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1755956171]
 layout_mode = 0
-offset_right = 1150.0
-offset_bottom = 643.0
+offset_left = 2.0
+offset_top = -1.0
+offset_right = 1158.0
+offset_bottom = 644.0
 texture = ExtResource("2_ivrn3")
+expand_mode = 1
 
 [node name="Timer" type="Timer" parent="." unique_id=514215607]
 wait_time = 5.005
 one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

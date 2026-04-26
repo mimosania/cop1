@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://rkywh6aqi7kr"]
+
+[ext_resource type="Script" uid="uid://cx0gswohg7lma" path="res://level_transitio_2.gd" id="1_mn7x1"]
+[ext_resource type="Texture2D" uid="uid://5dofjgo4qhuj" path="res://assets/sprites/background/level2.png" id="2_50cqu"]
+
+[node name="level_transitio2" type="Control" unique_id=1490496995]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mn7x1")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1923186197]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 649.0
+texture = ExtResource("2_50cqu")
+expand_mode = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=1842474206]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

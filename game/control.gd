@@ -11,8 +11,7 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://assets/scenes/peli.tscn")
+
 
 
 func _on_settings_pressed() -> void:
@@ -21,3 +20,10 @@ func _on_settings_pressed() -> void:
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_button_pressed() -> void:
+	print("START PAINETTU")
+	var path = "res://assets/scenes/level_transitio.tscn"
+	get_tree().change_scene_to_file(path)
+	

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dxo8bsrlm8uir"]
+
+[ext_resource type="Script" uid="uid://b4k4rdy8gsar" path="res://level_transitio_3.gd" id="1_2p60e"]
+[ext_resource type="Texture2D" uid="uid://ba05tug20rnp8" path="res://assets/sprites/level3.png" id="2_sgano"]
+[ext_resource type="Script" uid="uid://bxs3ej4aakmb2" path="res://texture_rect.gd" id="3_kn5jf"]
+
+[node name="level_transitio3" type="Control" unique_id=1829121401]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2p60e")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1208041619]
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 643.0
+texture = ExtResource("2_sgano")
+expand_mode = 1
+script = ExtResource("3_kn5jf")
+
+[node name="Timer" type="Timer" parent="TextureRect" unique_id=909677019]

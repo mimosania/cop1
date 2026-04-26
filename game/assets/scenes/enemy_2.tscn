@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://cp78o4nnth10k"]
+
+[ext_resource type="Texture2D" uid="uid://b5pc4kjjl3vuu" path="res://assets/sprites/mobs/vihut-removebg-preview (1).png" id="1_8hl44"]
+[ext_resource type="PackedScene" uid="uid://cunoynxwdr3em" path="res://assets/scenes/killzone.tscn" id="2_3850e"]
+
+[sub_resource type="GDScript" id="GDScript_bp46k"]
+script/source = "
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0lwv"]
+atlas = ExtResource("1_8hl44")
+region = Rect2(0, 0, 330, 378)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xd48f"]
+atlas = ExtResource("1_8hl44")
+region = Rect2(330, 0, 330, 378)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xfvwa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0lwv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xd48f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f7rxk"]
+size = Vector2(31, 2.5)
+
+[node name="Enemy2" type="Node2D" unique_id=1972843654]
+script = SubResource("GDScript_bp46k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=528473485]
+position = Vector2(-2, -6.000004)
+scale = Vector2(0.30606064, 0.3134921)
+sprite_frames = SubResource("SpriteFrames_xfvwa")
+
+[node name="Killzone" parent="." unique_id=463157565 instance=ExtResource("2_3850e")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=714571197]
+
+[node name="enemy_killzone" type="Area2D" parent="." unique_id=1188123638]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_killzone" unique_id=396556677]
+position = Vector2(1, -23)
+shape = SubResource("RectangleShape2D_f7rxk")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1176920982]
+target_position = Vector2(-31, 0)

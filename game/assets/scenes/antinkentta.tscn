@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ct4o5tpdn0xra" path="res://assets/sprites/tiles/FreeBlocks.png" id="3_g122x"]
 [ext_resource type="PackedScene" uid="uid://cunoynxwdr3em" path="res://assets/scenes/killzone.tscn" id="4_1hd4o"]
 [ext_resource type="PackedScene" uid="uid://c3jwrjmk4l21i" path="res://assets/scenes/goal_flag.tscn" id="5_5ce4r"]
+[ext_resource type="Texture2D" uid="uid://brvpmesjb1ivj" path="res://assets/sprites/background/Blue.png" id="6_w1e08"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1hd4o"]
 texture = ExtResource("2_g122x")
@@ -584,7 +585,7 @@ size = Vector2(70.6875, 32)
 size = Vector2(78.5, 33)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bl0o8"]
-size = Vector2(74.25, 32.9375)
+size = Vector2(66.25, 30.9375)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5h0am"]
 size = Vector2(75, 43.1875)
@@ -595,7 +596,7 @@ size = Vector2(79, 46)
 [node name="Node2D" type="Node2D" unique_id=693643132]
 
 [node name="pelihahmo" parent="." unique_id=42348193 instance=ExtResource("1_em0qr")]
-position = Vector2(2235, 54)
+position = Vector2(2349, 86)
 collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="pelihahmo" unique_id=208388809]
@@ -650,7 +651,7 @@ shape = SubResource("RectangleShape2D_od4jt")
 [node name="Killzone5" parent="." unique_id=154872967 instance=ExtResource("4_1hd4o")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone5" unique_id=1137220445]
-position = Vector2(4049.875, -33.53125)
+position = Vector2(4045.875, -32.53125)
 shape = SubResource("RectangleShape2D_bl0o8")
 
 [node name="Killzone6" parent="." unique_id=1211070439 instance=ExtResource("4_1hd4o")]
@@ -664,3 +665,16 @@ shape = SubResource("RectangleShape2D_5h0am")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone7" unique_id=836328511]
 position = Vector2(2114.5, 38)
 shape = SubResource("RectangleShape2D_7gn5d")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1911614007]
+show_behind_parent = true
+offset_left = -2974.0
+offset_top = -8531.0
+offset_right = 17956.0
+offset_bottom = 2649.0
+texture = ExtResource("6_w1e08")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1085943325]
+show_behind_parent = true
+offset_right = 40.0
+offset_bottom = 40.0

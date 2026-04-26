@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://5o1ftxqonwyf" path="res://assets/sprites/player/luigertelu.png" id="2_1tdvs"]
 [ext_resource type="Texture2D" uid="uid://b1q4vjhi2iqfs" path="res://assets/sprites/player/luigersson död.png" id="3_hjbjd"]
 [ext_resource type="Texture2D" uid="uid://bhjxsyobea3qq" path="res://assets/sprites/player/luigersson pyörii.png" id="3_jfmis"]
+[ext_resource type="Texture2D" uid="uid://ye7giso6sri6" path="res://assets/sprites/player/luigersonjump.png" id="5_hjbjd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jfmis"]
 atlas = ExtResource("3_jfmis")
@@ -105,6 +106,14 @@ animations = [{
 "name": &"idle",
 "speed": 5.0
 }, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_hjbjd")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
 "frames": [],
 "loop": true,
 "name": &"new_animation",
@@ -135,13 +144,13 @@ animations = [{
 script = ExtResource("1_1tdvs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=478537169]
-position = Vector2(0, -43)
+position = Vector2(0, -9)
 sprite_frames = SubResource("SpriteFrames_r3jtn")
-animation = &"walking"
+animation = &"jump"
 autoplay = "idle"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=119151080]
-position = Vector2(1, -38)
+position = Vector2(-3, -5)
 scale = Vector2(0.93749994, 1.012931)
 polygon = PackedVector2Array(2, 32, 30, 32, 29, 6, 1.0666667, -34.553196, -23, 4, -26, 32)
 

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bhjxsyobea3qq" path="res://assets/sprites/player/luigersson pyörii.png" id="2_welq6"]
 [ext_resource type="Texture2D" uid="uid://b1q4vjhi2iqfs" path="res://assets/sprites/player/luigersson död.png" id="3_kmqxo"]
 [ext_resource type="Texture2D" uid="uid://5o1ftxqonwyf" path="res://assets/sprites/player/luigertelu.png" id="4_y2exg"]
-[ext_resource type="Texture2D" uid="uid://bh4fceo3e8iji" path="res://assets/sprites/player/luigersson_littana2.png" id="5_welq6"]
+[ext_resource type="Texture2D" uid="uid://k54rt7s5gert" path="res://assets/sprites/player/luigerssonw.png" id="5_welq6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gi83k"]
 atlas = ExtResource("2_welq6")
@@ -64,15 +64,7 @@ region = Rect2(210, 0, 70, 82)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kmqxo"]
 atlas = ExtResource("5_welq6")
-region = Rect2(172, 0, 86, 187)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y2exg"]
-atlas = ExtResource("5_welq6")
-region = Rect2(86, 0, 86, 187)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cmrfk"]
-atlas = ExtResource("5_welq6")
-region = Rect2(0, 0, 86, 187)
+region = Rect2(0, 0, 168, 187)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tt0p5"]
 animations = [{
@@ -141,12 +133,6 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kmqxo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y2exg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cmrfk")
 }],
 "loop": true,
 "name": &"walljump",

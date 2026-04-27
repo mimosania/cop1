@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b1q4vjhi2iqfs" path="res://assets/sprites/player/luigersson död.png" id="3_hjbjd"]
 [ext_resource type="Texture2D" uid="uid://bhjxsyobea3qq" path="res://assets/sprites/player/luigersson pyörii.png" id="3_jfmis"]
 [ext_resource type="Texture2D" uid="uid://ds0k2yu6pp7cc" path="res://assets/sprites/player/luigersson_littana.png" id="5_4pbb4"]
+[ext_resource type="Texture2D" uid="uid://bgo1tmfr8338o" path="res://assets/sprites/player/luigerson_jump_down.png" id="5_bus0m"]
 [ext_resource type="Texture2D" uid="uid://ye7giso6sri6" path="res://assets/sprites/player/luigersonjump.png" id="5_hjbjd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jfmis"]
@@ -113,6 +114,9 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("5_bus0m")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_c1jx2")
 }],
 "loop": true,
@@ -155,13 +159,13 @@ size = Vector2(58, 4)
 script = ExtResource("1_1tdvs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=478537169]
-position = Vector2(0, -9)
+position = Vector2(107, -25)
 sprite_frames = SubResource("SpriteFrames_r3jtn")
 animation = &"jump_down"
 autoplay = "idle"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=119151080]
-position = Vector2(-3, -5)
+position = Vector2(-138, -5)
 scale = Vector2(0.93749994, 1.012931)
 polygon = PackedVector2Array(2, 32, 30, 32, 29, 6, 1.0666667, -34.553196, -23, 4, -26, 32)
 

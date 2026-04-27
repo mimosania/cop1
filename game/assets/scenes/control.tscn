@@ -69,9 +69,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -237.5
-offset_top = 20.5
+offset_top = 143.5
 offset_right = 234.5
-offset_bottom = 272.0
+offset_bottom = 289.5
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -85,16 +85,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_uchyk")
 theme_override_styles/hover = SubResource("StyleBoxFlat_uchyk")
 text = "Start game"
 
-[node name="Button2" type="Button" parent="VBoxContainer" unique_id=935007591]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_uchyk")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_uchyk")
-theme_override_styles/hover = SubResource("StyleBoxFlat_uchyk")
-text = "Options"
-
 [node name="Button3" type="Button" parent="VBoxContainer" unique_id=1385009200]
 layout_mode = 2
 size_flags_vertical = 3
@@ -106,7 +96,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_uchyk")
 theme_override_styles/hover = SubResource("StyleBoxFlat_uchyk")
 text = "Exit"
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_exit_pressed"]

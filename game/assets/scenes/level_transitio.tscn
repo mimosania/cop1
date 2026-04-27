@@ -22,7 +22,7 @@ texture = ExtResource("2_ivrn3")
 expand_mode = 1
 
 [node name="Timer" type="Timer" parent="." unique_id=514215607]
-wait_time = 5.005
+wait_time = 3.0
 one_shot = true
 autostart = true
 

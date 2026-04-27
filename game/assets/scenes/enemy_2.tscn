@@ -1,56 +1,86 @@
 [gd_scene format=3 uid="uid://cp78o4nnth10k"]
 
 [ext_resource type="Texture2D" uid="uid://b5pc4kjjl3vuu" path="res://assets/sprites/mobs/vihut-removebg-preview (1).png" id="1_8hl44"]
+[ext_resource type="Script" uid="uid://cvfuny0w1lmuf" path="res://assets/scripts/enemy.gd" id="1_3850e"]
 [ext_resource type="PackedScene" uid="uid://cunoynxwdr3em" path="res://assets/scenes/killzone.tscn" id="2_3850e"]
+[ext_resource type="Texture2D" uid="uid://desf1tsa12fl5" path="res://assets/sprites/mobs/pow.png" id="2_bp46k"]
 
-[sub_resource type="GDScript" id="GDScript_bp46k"]
-script/source = "
-"
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfvwa"]
+atlas = ExtResource("2_bp46k")
+region = Rect2(0, 0, 104, 99)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bp46k"]
+atlas = ExtResource("1_8hl44")
+region = Rect2(0, 0, 198, 226)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e0lwv"]
 atlas = ExtResource("1_8hl44")
-region = Rect2(0, 0, 330, 378)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xd48f"]
-atlas = ExtResource("1_8hl44")
-region = Rect2(330, 0, 330, 378)
+region = Rect2(198, 0, 198, 226)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xfvwa"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_e0lwv")
+"texture": SubResource("AtlasTexture_xfvwa")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bp46k")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xd48f")
+"texture": SubResource("AtlasTexture_e0lwv")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 3.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f7rxk"]
-size = Vector2(31, 2.5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bp46k"]
+size = Vector2(31.5, 31.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e0lwv"]
+size = Vector2(35.5, 3)
 
 [node name="Enemy2" type="Node2D" unique_id=1972843654]
-script = SubResource("GDScript_bp46k")
+script = ExtResource("1_3850e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=528473485]
-position = Vector2(-2, -6.000004)
-scale = Vector2(0.30606064, 0.3134921)
+position = Vector2(-2, -10)
+scale = Vector2(0.4099116, 0.38961536)
 sprite_frames = SubResource("SpriteFrames_xfvwa")
+autoplay = "default"
+frame_progress = 0.67394364
 
 [node name="Killzone" parent="." unique_id=463157565 instance=ExtResource("2_3850e")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=714571197]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=1250366086]
+light_mask = 4
+visibility_layer = 9
+position = Vector2(-1, -2)
+shape = SubResource("RectangleShape2D_bp46k")
 
-[node name="enemy_killzone" type="Area2D" parent="." unique_id=1188123638]
+[node name="RayCastRight" type="RayCast2D" parent="." unique_id=58651046]
+target_position = Vector2(13, 0)
+collision_mask = 9
+
+[node name="RayCastLeft" type="RayCast2D" parent="." unique_id=1439283308]
+target_position = Vector2(-13, 0)
+collision_mask = 9
+
+[node name="Timer" type="Timer" parent="." unique_id=2037094542]
+wait_time = 0.5
+
+[node name="enemy_killzone" type="Area2D" parent="." unique_id=816320862]
 collision_layer = 16
 collision_mask = 16
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_killzone" unique_id=396556677]
-position = Vector2(1, -23)
-shape = SubResource("RectangleShape2D_f7rxk")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_killzone" unique_id=393485019]
+position = Vector2(-1, -19)
+shape = SubResource("RectangleShape2D_e0lwv")
 
-[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1176920982]
-target_position = Vector2(-31, 0)
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="enemy_killzone" to="." method="_on_enemy_killzone_area_entered"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dvp60gei2fstx"]
 
-[ext_resource type="Script" path="res://assets/scripts/pelihahmo_walljump.gd" id="1_w8wwy"]
+[ext_resource type="Script" uid="uid://bb52e0qu4udbw" path="res://assets/scripts/pelihahmo_walljump.gd" id="1_w8wwy"]
 [ext_resource type="Texture2D" uid="uid://c6prlxqa3eibe" path="res://assets/sprites/player/luigersson_chill.png" id="2_kmqxo"]
 [ext_resource type="Texture2D" uid="uid://b1q4vjhi2iqfs" path="res://assets/sprites/player/luigersson död.png" id="3_kmqxo"]
 [ext_resource type="Texture2D" uid="uid://5o1ftxqonwyf" path="res://assets/sprites/player/luigertelu.png" id="4_y2exg"]
@@ -79,7 +79,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"chill",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -162,7 +162,7 @@ script = ExtResource("1_w8wwy")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2010707516]
 position = Vector2(5, -39)
 sprite_frames = SubResource("SpriteFrames_tt0p5")
-animation = &"jump_up"
+animation = &"chill"
 autoplay = "idle"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1169613389]

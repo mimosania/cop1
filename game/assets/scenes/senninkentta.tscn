@@ -316,11 +316,12 @@ script = ExtResource("1_jftav")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2053441748]
 modulate = Color(0.23407742, 0.43538186, 0.37107998, 1)
+show_behind_parent = true
 texture_filter = 1
-offset_left = -522.0
-offset_top = -473.0
-offset_right = 2478.0
-offset_bottom = 1527.0
+offset_left = -530.0
+offset_top = -484.0
+offset_right = 2470.0
+offset_bottom = 1516.0
 texture = ExtResource("1_oq3r7")
 stretch_mode = 1
 
@@ -338,6 +339,7 @@ position = Vector2(-2, -36)
 scale = Vector2(2, 2)
 
 [node name="GoalFlag" parent="." unique_id=1928462916 instance=ExtResource("4_dwcff")]
+show_behind_parent = true
 position = Vector2(1650, 863)
 script = ExtResource("6_201ca")
 

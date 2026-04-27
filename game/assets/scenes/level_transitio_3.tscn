@@ -13,6 +13,7 @@ grow_vertical = 2
 script = ExtResource("1_2p60e")
 
 [node name="Timer" type="Timer" parent="." unique_id=909677019]
+wait_time = 3.0
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1208041619]
 layout_mode = 0

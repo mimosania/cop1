@@ -68,16 +68,17 @@ func _physics_process(delta: float) -> void:
 				velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	# Animation
-	if velocity.y < 0 and !has_double_jumped:
-		animated_sprite.play("jump_up")
-	if velocity.y > 0 and !has_double_jumped:
-		animated_sprite.play("jump_down")
-	if has_double_jumped == true:
-		animated_sprite.play("doublejump")
-	if velocity.x == 0 and is_on_floor():
-		animated_sprite.play("idle")
-	if velocity.x != 0 and is_on_floor():
-		animated_sprite.play("walking")
+	if alive:
+		if velocity.y < 0 and !has_double_jumped:
+			animated_sprite.play("jump_up")
+		if velocity.y > 0 and !has_double_jumped:
+			animated_sprite.play("jump_down")
+		if has_double_jumped == true:
+			animated_sprite.play("doublejump")
+		if velocity.x == 0 and is_on_floor():
+			animated_sprite.play("idle")
+		if velocity.x != 0 and is_on_floor():
+			animated_sprite.play("walking")
 
 	move_and_slide()
 	
@@ -88,6 +89,6 @@ func chill():
 	alive = false
 
 
-func _on_attack_hitbox_area_entered(area: Area2D) -> void:
+func _on_attack_hitbox_area_entered(_area) -> void:
 	velocity.y = JUMP_VELOCITY
 	has_double_jumped = false

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b1q4vjhi2iqfs" path="res://assets/sprites/player/luigersson död.png" id="3_kmqxo"]
 [ext_resource type="Texture2D" uid="uid://5o1ftxqonwyf" path="res://assets/sprites/player/luigertelu.png" id="4_y2exg"]
 [ext_resource type="Texture2D" uid="uid://k54rt7s5gert" path="res://assets/sprites/player/luigerssonw.png" id="5_welq6"]
-[ext_resource type="Texture2D" uid="uid://ds0k2yu6pp7cc" path="res://assets/sprites/player/luigersson_littana.png" id="6_cmrfk"]
+[ext_resource type="Texture2D" uid="uid://bgo1tmfr8338o" path="res://assets/sprites/player/luigerson_jump_down.png" id="5_y2exg"]
 [ext_resource type="Texture2D" uid="uid://ye7giso6sri6" path="res://assets/sprites/player/luigersonjump.png" id="7_vqxbx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y2exg"]
@@ -36,9 +36,9 @@ region = Rect2(75, 75, 75, 75)
 atlas = ExtResource("4_y2exg")
 region = Rect2(280, 0, 70, 82)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bdix2"]
-atlas = ExtResource("6_cmrfk")
-region = Rect2(42, 46, 42, 46)
+[sub_resource type="AtlasTexture" id="AtlasTexture_vqxbx"]
+atlas = ExtResource("5_y2exg")
+region = Rect2(0, 0, 168, 187)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_galmr"]
 atlas = ExtResource("7_vqxbx")
@@ -108,7 +108,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bdix2")
+"texture": SubResource("AtlasTexture_vqxbx")
 }],
 "loop": true,
 "name": &"jump_down",
@@ -162,7 +162,7 @@ script = ExtResource("1_w8wwy")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2010707516]
 position = Vector2(5, -39)
 sprite_frames = SubResource("SpriteFrames_tt0p5")
-animation = &"jump_up"
+animation = &"jump_down"
 autoplay = "idle"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1169613389]

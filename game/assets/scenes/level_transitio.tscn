@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cs8ibdg7nbnxf"]
 
-[ext_resource type="Script" uid="uid://cy3go4o7ktuwm" path="res://assets/scenes/level_transitio.gd" id="1_p7sjb"]
+[ext_resource type="Script" uid="uid://cy3go4o7ktuwm" path="res://assets/scripts/level_transitio.gd" id="1_p7sjb"]
 [ext_resource type="Texture2D" uid="uid://dv4f3qh73t5ir" path="res://assets/sprites/background/level1-1.png" id="2_ivrn3"]
 
 [node name="LevelTransitio" type="Control" unique_id=1025558730]

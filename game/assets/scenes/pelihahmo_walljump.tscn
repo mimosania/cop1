@@ -1,10 +1,19 @@
 [gd_scene format=3 uid="uid://dvp60gei2fstx"]
 
 [ext_resource type="Script" uid="uid://bb52e0qu4udbw" path="res://pelihahmo_walljump.gd" id="1_w8wwy"]
+[ext_resource type="Texture2D" uid="uid://c6prlxqa3eibe" path="res://assets/sprites/player/luigersson_chill.png" id="2_kmqxo"]
 [ext_resource type="Texture2D" uid="uid://bhjxsyobea3qq" path="res://assets/sprites/player/luigersson pyörii.png" id="2_welq6"]
 [ext_resource type="Texture2D" uid="uid://b1q4vjhi2iqfs" path="res://assets/sprites/player/luigersson död.png" id="3_kmqxo"]
 [ext_resource type="Texture2D" uid="uid://5o1ftxqonwyf" path="res://assets/sprites/player/luigertelu.png" id="4_y2exg"]
 [ext_resource type="Texture2D" uid="uid://k54rt7s5gert" path="res://assets/sprites/player/luigerssonw.png" id="5_welq6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2exg"]
+atlas = ExtResource("2_kmqxo")
+region = Rect2(0, 0, 91, 81)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmrfk"]
+atlas = ExtResource("2_kmqxo")
+region = Rect2(91, 0, 91, 81)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gi83k"]
 atlas = ExtResource("2_welq6")
@@ -68,6 +77,17 @@ region = Rect2(0, 0, 168, 187)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tt0p5"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y2exg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmrfk")
+}],
+"loop": true,
+"name": &"chill",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gi83k")
@@ -150,7 +170,7 @@ script = ExtResource("1_w8wwy")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2010707516]
 position = Vector2(5, -39)
 sprite_frames = SubResource("SpriteFrames_tt0p5")
-animation = &"walljump"
+animation = &"chill"
 autoplay = "idle"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1169613389]

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dxo8bsrlm8uir"]
 
-[ext_resource type="Script" uid="uid://b4k4rdy8gsar" path="res://level_transitio_3.gd" id="1_2p60e"]
+[ext_resource type="Script" uid="uid://b4k4rdy8gsar" path="res://assets/scripts/level_transitio_3.gd" id="1_2p60e"]
 [ext_resource type="Texture2D" uid="uid://ba05tug20rnp8" path="res://assets/sprites/level3.png" id="2_sgano"]
-[ext_resource type="Script" uid="uid://bxs3ej4aakmb2" path="res://texture_rect.gd" id="3_kn5jf"]
+[ext_resource type="Script" uid="uid://bxs3ej4aakmb2" path="res://assets/scripts/texture_rect.gd" id="3_kn5jf"]
 
 [node name="level_transitio3" type="Control" unique_id=1829121401]
 layout_mode = 3

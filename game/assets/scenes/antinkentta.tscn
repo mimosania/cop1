@@ -630,10 +630,10 @@ position = Vector2(1009.5, 383.75)
 shape = SubResource("RectangleShape2D_1hd4o")
 
 [node name="GoalFlag" parent="." unique_id=1928462916 instance=ExtResource("5_5ce4r")]
-position = Vector2(3806, -453)
+position = Vector2(3808, -449)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GoalFlag" unique_id=1512081551]
-position = Vector2(-0.5, -102)
+position = Vector2(2, -101)
 shape = SubResource("RectangleShape2D_p33qv")
 
 [node name="Killzone" parent="." unique_id=1091552240 instance=ExtResource("4_1hd4o")]
@@ -667,10 +667,11 @@ position = Vector2(2114.5, 38)
 shape = SubResource("RectangleShape2D_7gn5d")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1911614007]
+visible = false
 show_behind_parent = true
-offset_left = -2974.0
+offset_left = -2856.0
 offset_top = -8531.0
-offset_right = 17956.0
+offset_right = 18074.0
 offset_bottom = 2649.0
 texture = ExtResource("6_w1e08")
 

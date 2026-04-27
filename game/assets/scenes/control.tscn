@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ddw8eu16j846s"]
 
-[ext_resource type="Script" uid="uid://diae7ykr3dla2" path="res://control.gd" id="1_w4djk"]
+[ext_resource type="Script" uid="uid://diae7ykr3dla2" path="res://assets/scripts/control.gd" id="1_w4djk"]
 [ext_resource type="Texture2D" uid="uid://cfxllms4g8a2q" path="res://assets/sprites/menu/menu.png" id="2_xobuw"]
 [ext_resource type="FontFile" uid="uid://bpo5j8egvqirq" path="res://assets/sprites/menu/SuperMario256.ttf" id="3_3lwha"]
 

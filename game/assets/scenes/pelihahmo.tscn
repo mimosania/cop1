@@ -159,13 +159,13 @@ size = Vector2(58, 4)
 script = ExtResource("1_1tdvs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=478537169]
-position = Vector2(107, -25)
+position = Vector2(2, -11)
 sprite_frames = SubResource("SpriteFrames_r3jtn")
-animation = &"jump_down"
+animation = &"jump_up"
 autoplay = "idle"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=119151080]
-position = Vector2(-138, -5)
+position = Vector2(-2, -6)
 scale = Vector2(0.93749994, 1.012931)
 polygon = PackedVector2Array(2, 32, 30, 32, 29, 6, 1.0666667, -34.553196, -23, 4, -26, 32)
 

@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c6prlxqa3eibe" path="res://assets/sprites/player/luigersson_chill.png" id="2_mj2mw"]
 [ext_resource type="Texture2D" uid="uid://b1q4vjhi2iqfs" path="res://assets/sprites/player/luigersson död.png" id="3_mn0io"]
 [ext_resource type="Texture2D" uid="uid://ye7giso6sri6" path="res://assets/sprites/player/luigersonjump.png" id="6_2gcw6"]
-[ext_resource type="Texture2D" uid="uid://ds0k2yu6pp7cc" path="res://assets/sprites/player/luigersson_littana.png" id="6_jb36n"]
+[ext_resource type="Texture2D" uid="uid://bgo1tmfr8338o" path="res://assets/sprites/player/luigerson_jump_down.png" id="6_jb36n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rd7as"]
 atlas = ExtResource("2_mj2mw")
@@ -54,7 +54,7 @@ region = Rect2(280, 0, 70, 82)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1sspx"]
 atlas = ExtResource("6_jb36n")
-region = Rect2(42, 46, 42, 46)
+region = Rect2(0, 0, 70, 87)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qjw6i"]
 atlas = ExtResource("6_2gcw6")
@@ -182,15 +182,16 @@ collision_mask = 3
 script = ExtResource("1_giruw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2010707516]
-position = Vector2(-2.3841858e-07, -40)
+position = Vector2(1.6940659e-21, -38)
 scale = Vector2(1.0662651, 1)
 sprite_frames = SubResource("SpriteFrames_tt0p5")
-animation = &"jump_up"
+animation = &"jump_down"
 autoplay = "idle"
+frame_progress = 0.1869878
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1169613389]
 visible = false
-position = Vector2(3, -35)
+position = Vector2(1, -31)
 polygon = PackedVector2Array(28, 32, 27, 6, -1, -26, -25, 4, -28, 32)
 
 [node name="AttackHitbox" type="Area2D" parent="." unique_id=116334518]
@@ -200,7 +201,7 @@ collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox" unique_id=2119132158]
 visible = false
-position = Vector2(3, -1)
+position = Vector2(1, 3)
 shape = SubResource("RectangleShape2D_mn0io")
 
 [connection signal="area_entered" from="AttackHitbox" to="." method="_on_attack_hitbox_area_entered"]

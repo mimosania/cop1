@@ -15,6 +15,7 @@ func die():
 	alive = false
 	velocity.y = JUMP_VELOCITY
 	velocity.x = velocity.x*-1
+	get_node("AttackHitbox").queue_free()
 
 func _physics_process(delta: float) -> void:
 	

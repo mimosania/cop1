@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://xife2ix4y2v1"]
 
+[ext_resource type="Script" uid="uid://diqftuhhgmt5f" path="res://assets/scenes/theend.gd" id="1_aia61"]
 [ext_resource type="Texture2D" uid="uid://bv841gk3afftb" path="res://assets/sprites/background/Illustration133_1.png" id="1_t6ryu"]
 
 [node name="Control" type="Control" unique_id=100801509]
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_aia61")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=76604386]
 texture_filter = 1

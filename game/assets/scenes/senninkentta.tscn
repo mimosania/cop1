@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bats4nphumgq7" path="res://assets/scenes/enemy.tscn" id="5_dwcff"]
 [ext_resource type="Script" uid="uid://cgbv787yw6bk5" path="res://assets/scripts/goal_flag3.gd" id="6_201ca"]
 [ext_resource type="PackedScene" uid="uid://c8axpx5kqb3eb" path="res://assets/scenes/enemy_vertical.tscn" id="6_g3nvb"]
+[ext_resource type="PackedScene" uid="uid://cunoynxwdr3em" path="res://assets/scenes/killzone.tscn" id="9_j2ow5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oq3r7"]
 texture = ExtResource("1_07ati")
@@ -307,6 +308,9 @@ sources/0 = SubResource("TileSetAtlasSource_oq3r7")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jftav"]
 size = Vector2(31, 203)
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fka8a"]
+distance = -1140.0
+
 [node name="senninkentta" type="Node2D" unique_id=1300329203]
 script = ExtResource("1_jftav")
 
@@ -327,7 +331,7 @@ tile_map_data = PackedByteArray("AAAAABIAAAAAAAgAAAABABIAAAABAAgAAAACABIAAAABAAg
 tile_set = SubResource("TileSet_dwcff")
 
 [node name="pelihahmo_walljump" parent="." unique_id=821567355 instance=ExtResource("2_4pefy")]
-position = Vector2(156, 796)
+position = Vector2(155, 836)
 
 [node name="Camera2D" type="Camera2D" parent="pelihahmo_walljump" unique_id=1937342623]
 position = Vector2(-2, -36)
@@ -349,3 +353,8 @@ position = Vector2(96, 22)
 
 [node name="enemy_vertical2" parent="." unique_id=561812441 instance=ExtResource("6_g3nvb")]
 position = Vector2(937, 546)
+
+[node name="Killzone" parent="." unique_id=463157565 instance=ExtResource("9_j2ow5")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=988503775]
+shape = SubResource("WorldBoundaryShape2D_fka8a")

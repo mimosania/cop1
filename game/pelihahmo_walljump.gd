@@ -51,6 +51,10 @@ func _physics_process(delta: float) -> void:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 
 		#Animation
+		if velocity.y < 0 and !has_wall_jumped:
+			animated_sprite.play("jump_up")
+		if velocity.y > 0 and !has_wall_jumped:
+			animated_sprite.play("jump_down")
 		if has_wall_jumped == true:
 			animated_sprite.play("walljump")
 		if velocity.x == 0 and is_on_floor():

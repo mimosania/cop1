@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dxo8bsrlm8uir"]
 
 [ext_resource type="Script" uid="uid://b4k4rdy8gsar" path="res://assets/scripts/level_transitio_3.gd" id="1_2p60e"]
-[ext_resource type="Texture2D" uid="uid://ba05tug20rnp8" path="res://assets/sprites/level3.png" id="2_sgano"]
+[ext_resource type="Texture2D" uid="uid://c2u2prrvof17w" path="res://assets/sprites/background/leveli3.png" id="2_4tmjq"]
 
 [node name="level_transitio3" type="Control" unique_id=1829121401]
 layout_mode = 3
@@ -19,7 +19,7 @@ wait_time = 3.0
 layout_mode = 0
 offset_right = 1154.0
 offset_bottom = 643.0
-texture = ExtResource("2_sgano")
+texture = ExtResource("2_4tmjq")
 expand_mode = 1
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

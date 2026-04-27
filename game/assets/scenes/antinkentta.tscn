@@ -604,7 +604,7 @@ size = Vector2(41, 41)
 [node name="Node2D" type="Node2D" unique_id=693643132]
 
 [node name="pelihahmo" parent="." unique_id=42348193 instance=ExtResource("1_em0qr")]
-position = Vector2(3902, -497)
+position = Vector2(-25, -10)
 collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="pelihahmo" unique_id=208388809]
@@ -682,18 +682,20 @@ position = Vector2(2114.5, 38)
 shape = SubResource("RectangleShape2D_7gn5d")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1911614007]
-visible = false
 show_behind_parent = true
-offset_left = -2584.0
-offset_top = -8319.0
-offset_right = 18346.0
-offset_bottom = 2861.0
+z_index = -1
+offset_left = -2611.0
+offset_top = -8273.0
+offset_right = 18319.0
+offset_bottom = 2907.0
 texture = ExtResource("6_w1e08")
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=1085943325]
 show_behind_parent = true
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 27.0
+offset_top = -6.0
+offset_right = 67.0
+offset_bottom = 34.0
 
 [node name="Enemy3" parent="." unique_id=1972843654 instance=ExtResource("8_p33qv")]
 position = Vector2(2345, 115)
